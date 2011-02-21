@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.4//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.4/distro-source/core/src/gwt-module.dtd">
+<module>
+  <inherits name="com.google.gwt.core.Core" />
+  <generate-with class="com.google.gwt.chrome.crx.linker.ExtensionGenerator">
+    <when-type-assignable class="com.google.gwt.chrome.crx.client.Extension" />
+  </generate-with>
+  <generate-with class="com.google.gwt.chrome.crx.linker.ComponentGenerator">
+    <when-type-assignable class="com.google.gwt.chrome.crx.client.Component" />
+  </generate-with>
+  <define-linker name="crx"
+    class="com.google.gwt.chrome.crx.linker.ExtensionLinker" />
+</module>
