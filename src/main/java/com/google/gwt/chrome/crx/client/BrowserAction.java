@@ -37,7 +37,7 @@ import java.lang.annotation.Target;
  */
 public abstract class BrowserAction implements Component {
   /**
-   * Annotation for defining the properties of a PageAction.
+   * Annotation for defining the properties of a BrowserAction.
    */
   @Target(ElementType.TYPE)
   @Retention(RetentionPolicy.RUNTIME)
