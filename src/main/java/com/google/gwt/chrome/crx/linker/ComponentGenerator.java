@@ -269,7 +269,7 @@ public class ComponentGenerator extends Generator {
       throw new UnableToCompleteException();
     }
     context.commitArtifact(logger, new ContentScriptArtifact(spec.path(),
-        spec.whiteList(), spec.runAt().name().toLowerCase()));
+        spec.matches(), spec.runAt().name().toLowerCase()));
   }
 
   private static String processPage(TreeLogger logger,

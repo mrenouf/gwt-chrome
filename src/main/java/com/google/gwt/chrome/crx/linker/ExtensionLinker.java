@@ -79,12 +79,12 @@ public class ExtensionLinker extends AbstractLinker {
     final JsonArray array = JsonArray.create();
     for (ContentScriptArtifact contentScript : contentScripts) {
       JsonObject entry = JsonObject.create();
-      JsonArray whiteList = JsonArray.create();
-      String[] patterns = contentScript.getWhiteList();
+      JsonArray matchPatterns = JsonArray.create();
+      String[] patterns = contentScript.getMatchPatterns();
       for (String pattern : patterns) {
-        whiteList.add(pattern);
+        matchPatterns.add(pattern);
       }
-      entry.put("matches", whiteList);
+      entry.put("matches", matchPatterns);
       JsonArray path = JsonArray.create();
       path.add(contentScript.getPath());
       entry.put("js", path);

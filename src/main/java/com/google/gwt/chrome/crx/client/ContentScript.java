@@ -50,7 +50,7 @@ public abstract class ContentScript implements Component, EntryPoint {
   @Retention(RetentionPolicy.RUNTIME)
   @Documented
   public @interface ManifestInfo {
-    String[] whiteList();
+    String[] matches();
 
     String path();
 

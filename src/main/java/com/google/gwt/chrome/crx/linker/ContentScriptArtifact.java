@@ -25,12 +25,12 @@ public class ContentScriptArtifact extends Artifact<ContentScriptArtifact> {
 
   private final String path;
   private final String runAt;
-  private final String[] whiteList;
+  private final String[] matchMatterns;
   
   public ContentScriptArtifact(String path, String[] whiteList, String runAt) {
     super(ExtensionLinker.class);
     this.path = path;
-    this.whiteList = whiteList;
+    this.matchMatterns = whiteList;
     this.runAt = runAt;
   }
 
@@ -42,8 +42,8 @@ public class ContentScriptArtifact extends Artifact<ContentScriptArtifact> {
     return this.runAt;
   }
   
-  public String[] getWhiteList() {
-    return this.whiteList;
+  public String[] getMatchPatterns() {
+    return this.matchMatterns;
   }
 
   @Override
