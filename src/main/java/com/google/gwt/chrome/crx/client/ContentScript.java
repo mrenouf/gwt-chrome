@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import com.google.gwt.core.client.EntryPoint;
+
 /**
  * ContentScripts are themselves EntryPoints and should be the main entry point
  * in a separate stand alone module. You may annotate a ContentScript with a
@@ -32,7 +34,7 @@ import java.lang.annotation.Target;
  * "http://dev.chromium.org/developers/design-documents/extensions/content-scripts"
  * >Content Scripts</a>
  */
-public abstract class ContentScript implements Component {
+public abstract class ContentScript implements Component, EntryPoint {
   public static final String DOCUMENT_START = "document_start";
   public static final String DOCUMENT_END = "document_end";
   
