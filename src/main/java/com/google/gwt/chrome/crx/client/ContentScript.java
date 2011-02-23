@@ -35,9 +35,13 @@ import com.google.gwt.core.client.EntryPoint;
  * >Content Scripts</a>
  */
 public abstract class ContentScript implements Component, EntryPoint {
-  public static final String DOCUMENT_START = "document_start";
-  public static final String DOCUMENT_END = "document_end";
-  
+
+  public enum RunAt {
+    DOCUMENT_START,
+    DOCUMENT_END,
+    DOCUMENT_IDLE;
+  }
+
   /**
    * ContentScript Specification annotation for defining the fields that go in
    * the manifest.
@@ -49,7 +53,7 @@ public abstract class ContentScript implements Component, EntryPoint {
     String[] whiteList();
 
     String path();
-    
-    String runAt();
+
+    RunAt runAt() default RunAt.DOCUMENT_IDLE;
   }
 }

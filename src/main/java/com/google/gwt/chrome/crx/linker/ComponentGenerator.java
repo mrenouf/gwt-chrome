@@ -15,12 +15,18 @@
  */
 package com.google.gwt.chrome.crx.linker;
 
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.gwt.chrome.crx.client.BrowserAction;
 import com.google.gwt.chrome.crx.client.ContentScript;
+import com.google.gwt.chrome.crx.client.ContentScript.ManifestInfo;
 import com.google.gwt.chrome.crx.client.Icon;
 import com.google.gwt.chrome.crx.client.PageAction;
 import com.google.gwt.chrome.crx.client.Plugin;
-import com.google.gwt.chrome.crx.client.ContentScript.ManifestInfo;
 import com.google.gwt.core.ext.Generator;
 import com.google.gwt.core.ext.GeneratorContext;
 import com.google.gwt.core.ext.TreeLogger;
@@ -31,12 +37,6 @@ import com.google.gwt.core.ext.typeinfo.NotFoundException;
 import com.google.gwt.core.ext.typeinfo.TypeOracle;
 import com.google.gwt.user.rebind.ClassSourceFileComposerFactory;
 import com.google.gwt.user.rebind.SourceWriter;
-
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Generator for extension {@link com.google.gwt.chrome.crx.client.Component}s.
@@ -269,7 +269,7 @@ public class ComponentGenerator extends Generator {
       throw new UnableToCompleteException();
     }
     context.commitArtifact(logger, new ContentScriptArtifact(spec.path(),
-        spec.whiteList(), spec.runAt()));
+        spec.whiteList(), spec.runAt().name().toLowerCase()));
   }
 
   private static String processPage(TreeLogger logger,
